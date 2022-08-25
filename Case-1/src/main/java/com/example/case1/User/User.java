@@ -3,7 +3,7 @@ package com.example.case1.User;
 import javax.persistence.*;
 
 
-@Entity(name = "`User`")
+@Entity(name = "`user`")
 @Table
 public class User {
 
@@ -52,8 +52,7 @@ public class User {
     )
     private String phoneNumber;
 
-    public User(Long id, String firstName, String lastName, String email, String phoneNumber) {
-        this.id = id;
+    public User(String firstName, String lastName, String email, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

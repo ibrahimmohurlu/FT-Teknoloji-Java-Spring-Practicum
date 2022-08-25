@@ -1,9 +1,10 @@
-package com.example.case1.User;
+package com.example.case1.Product;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity(name = "Product")
+@Entity(name = "product")
+@Table
 public class Product {
     @Id
     @SequenceGenerator(
@@ -24,7 +25,7 @@ public class Product {
     @Column(
             name = "name",
             length = 50,
-            nullable=false
+            nullable = false
     )
     private String name;
 
@@ -36,7 +37,7 @@ public class Product {
     private Double price;
 
     @Column(
-            name="expiration_date",
+            name = "expiration_date",
             nullable = true,
             columnDefinition = "date"
     )
@@ -45,8 +46,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String name, Double price, LocalDate expDate) {
-        this.id = id;
+    public Product(String name, Double price, LocalDate expDate) {
         this.name = name;
         this.price = price;
         this.expDate = expDate;
