@@ -1,4 +1,4 @@
-package com.example.case1.User;
+package com.example.case1.User.Entity;
 
 import javax.persistence.*;
 
@@ -8,48 +8,23 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
-    @Column(
-            name = "id",
-            updatable = false
-    )
+    @SequenceGenerator(name = "user_sequence", sequenceName = "user_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
+    @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(
-            name = "first_name",
-            nullable = false,
-            length = 50
+    @Column(name = "first_name", nullable = false, length = 50
 
     )
     private String firstName;
 
-    @Column(
-            name = "last_name",
-            nullable = false,
-            length = 50
-    )
+    @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
-    @Column(
-            name = "email",
-            nullable = false,
-            length = 50
-    )
+    @Column(name = "email", nullable = false, length = 50)
     private String email;
 
-    @Column(
-            name = "phone_number",
-            nullable = false,
-            length = 15
-    )
+    @Column(name = "phone_number", nullable = false, length = 15)
     private String phoneNumber;
 
     public User(String firstName, String lastName, String email, String phoneNumber) {
@@ -106,12 +81,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+        return "User{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", email='" + email + '\'' + ", phoneNumber='" + phoneNumber + '\'' + '}';
     }
 }

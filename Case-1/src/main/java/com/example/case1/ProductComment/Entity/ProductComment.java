@@ -1,10 +1,10 @@
-package com.example.case1.ProductComment;
+package com.example.case1.ProductComment.Entity;
 
-import com.example.case1.Product.Product;
-import com.example.case1.User.User;
+import com.example.case1.Product.Entity.Product;
+import com.example.case1.User.Entity.User;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity(name = "product_comment")
 @Table
@@ -36,13 +36,13 @@ public class ProductComment {
             columnDefinition = "date",
             nullable = false
     )
-    private LocalDate commentDate;
+    private Date commentDate;
 
     @ManyToOne
-    @JoinColumn(name="product_id")
+    @JoinColumn(name = "product_id")
     private Product productId;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User userId;
 }
