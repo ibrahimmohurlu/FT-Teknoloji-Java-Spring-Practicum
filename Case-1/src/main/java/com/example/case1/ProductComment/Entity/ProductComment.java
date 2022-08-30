@@ -2,12 +2,14 @@ package com.example.case1.ProductComment.Entity;
 
 import com.example.case1.Product.Entity.Product;
 import com.example.case1.User.Entity.User;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "product_comment")
 @Table
+@Data
 public class ProductComment {
     @Id
     @SequenceGenerator(
@@ -40,9 +42,20 @@ public class ProductComment {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product productId;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
+
+    @Override
+    public String toString() {
+        return "ProductComment{" +
+                "id=" + id +
+                ", comment='" + comment + '\'' +
+                ", commentDate=" + commentDate +
+                ", product=" + product +
+                ", user=" + user +
+                '}';
+    }
 }
