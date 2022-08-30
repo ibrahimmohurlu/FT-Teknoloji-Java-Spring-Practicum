@@ -5,7 +5,8 @@ import com.example.case1.User.Entity.User;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity(name = "product_comment")
 @Table
@@ -38,7 +39,7 @@ public class ProductComment {
             columnDefinition = "date",
             nullable = false
     )
-    private Date commentDate;
+    private LocalDate commentDate;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

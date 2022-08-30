@@ -1,10 +1,9 @@
 package com.example.case1.Product.Entity;
 
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity(name = "product")
 @Table
@@ -23,16 +22,9 @@ public class Product {
     private Double price;
 
     @Column(name = "expiration_date", nullable = true, columnDefinition = "date")
-    @DateTimeFormat(pattern = "dd-mm-yyyy")
-    private Date expDate;
+    private LocalDate expDate;
 
     public Product() {
-    }
-
-    public Product(String name, Double price, Date expDate) {
-        this.name = name;
-        this.price = price;
-        this.expDate = expDate;
     }
 
 
