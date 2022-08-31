@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @Service
@@ -36,26 +38,31 @@ public class ProductService {
 
     public List<ProductComment> getCommentsByProductIdBetweenDate(
             Long productId,
-            LocalDate startDate,
-            LocalDate endDate){
+            String startDate,
+            String endDate) {
         Optional<Product> foundProduct = productRepository.findById(productId);
         List<ProductComment> comments;
         if (foundProduct.isPresent()) {
-            comments = productCommentRepository.findAllByProductAndCommentDateBetween(
-                    foundProduct.get(),
-                    startDate,
-                    endDate);
+            if (startDate.equals("") && endDate.equals("")) {
+                comments = productCommentRepository.findByProduct(foundProduct.get());
+            } else {
+                comments = productCommentRepository.findAllByProductAndCommentDateBetween(
+                        foundProduct.get(),
+                        LocalDate.parse(startDate),
+                        LocalDate.parse(endDate));
+            }
+
         } else {
             throw new RuntimeException("Product doesn't exists");
         }
         return comments;
     }
 
-    public List<Product> getExpiredProducts(){
+    public List<Product> getExpiredProducts() {
         return productRepository.findAllExpired(LocalDate.now());
     }
 
-    public List<Product> getNotExpiredProducts(){
+    public List<Product> getNotExpiredProducts() {
         return productRepository.findAllNotExpired(LocalDate.now());
     }
 

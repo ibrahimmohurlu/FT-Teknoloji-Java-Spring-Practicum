@@ -28,8 +28,8 @@ class ProductServiceTest {
     void getCommentsByProductIdBetweenDate() {
         List<ProductComment> commentList = productService.getCommentsByProductIdBetweenDate(
                 8L,
-                LocalDate.of(2021, 1, 1),
-                LocalDate.now());
+                "2021-01-01",
+                LocalDate.now().toString());
         Assertions.assertNotEquals(commentList.size(), 0);
         for (ProductComment c : commentList) {
             System.out.println(c.toString());
