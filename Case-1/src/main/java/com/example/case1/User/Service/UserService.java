@@ -22,29 +22,24 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<ProductComment> getCommentsByUserId(Long userId) {
-        Optional<User> foundUser = userRepository.findById(userId);
-        List<ProductComment> comments;
-        if (foundUser.isPresent()) {
-            comments = productCommentRepository.findByUser(foundUser.get());
-        } else {
-            throw new RuntimeException("User doesn't exists.");
-        }
-        return comments;
-    }
 
-    public List<ProductComment> getCommentsByUserIdBetweenDates(
+    public List<ProductComment> getCommentsByUserId(
             Long userId,
-            LocalDate startDate,
-            LocalDate endDate) {
+            String startDate,
+            String endDate) {
 
         Optional<User> foundUser = userRepository.findById(userId);
         List<ProductComment> comments;
         if (foundUser.isPresent()) {
-            comments = productCommentRepository.findAllByUserAndCommentDateBetween(
-                    foundUser.get(),
-                    startDate,
-                    endDate);
+            if (startDate.equals("") && endDate.equals("")) {
+                comments = productCommentRepository.findByUser(foundUser.get());
+            } else {
+                comments = productCommentRepository.findAllByUserAndCommentDateBetween(
+                        foundUser.get(),
+                        LocalDate.parse(startDate),
+                        LocalDate.parse(endDate));
+            }
+
         } else {
             throw new RuntimeException("User doesn't exists.");
         }

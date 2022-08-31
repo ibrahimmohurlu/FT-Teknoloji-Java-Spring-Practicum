@@ -16,7 +16,7 @@ class UserServiceTest {
 
     @Test
     void getCommentsByUserId() {
-        List<ProductComment> comments = userService.getCommentsByUserId(3L);
+        List<ProductComment> comments = userService.getCommentsByUserId(3L,"","");
         Assertions.assertNotEquals(comments.size(), 0);
         for (ProductComment c : comments) {
             System.out.println(c.toString());
@@ -26,10 +26,10 @@ class UserServiceTest {
 
     @Test
     void getCommentsByUserIdBetweenDates() {
-        List<ProductComment> comments = userService.getCommentsByUserIdBetweenDates(
+        List<ProductComment> comments = userService.getCommentsByUserId(
                 4L,
-                LocalDate.of(2021,1,1),
-                LocalDate.of(2022,12,31));
+                "2021-01-01",
+                "2022-12-31");
         Assertions.assertNotEquals(comments.size(), 0);
         for (ProductComment c : comments) {
             System.out.println(c.toString());

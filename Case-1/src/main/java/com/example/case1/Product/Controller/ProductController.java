@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -30,7 +28,7 @@ public class ProductController {
 
 
     @GetMapping("/{id}/comments")
-    public ResponseEntity<List<ProductComment>> getCommentsByProductIdBetweenDates(
+    public ResponseEntity<List<ProductComment>> getCommentsByProductId(
             @PathVariable String id,
             @DateTimeFormat(pattern = "dd-mm-yyyy") @RequestParam(required = false,defaultValue = "") String start_date,
             @DateTimeFormat(pattern = "dd-mm-yyyy") @RequestParam(required = false,defaultValue = "") String end_date) {
