@@ -23,6 +23,7 @@ insert into product (id, name, price, expiration_date) values (7, 'Muffin Orange
 insert into product (id, name, price, expiration_date) values (8, 'Pasta - Gnocchi, Potato', 84.11, '29-01-2022');
 insert into product (id, name, price, expiration_date) values (9, 'Ham - Proscuitto', 37.08, '12-05-2022');
 insert into product (id, name, price, expiration_date) values (10, 'Lobster - Baby, Boiled', 91.08, '14-08-2022');
+insert into product (id, name, price, expiration_date) values (11, 'Orange Juice', 2.85, '14-08-4022');
 
  */
 
