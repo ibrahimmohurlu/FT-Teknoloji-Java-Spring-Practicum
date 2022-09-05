@@ -34,6 +34,8 @@ with [data.sql](./src/main/resources/data.sql)
 
 [Mockaroo](https://www.mockaroo.com/) used to create mock data.
 
+---
+
 ## API Endpoints
 
 | Endpoint              | Functionality                                                                                                                                       | Request Type |
@@ -42,3 +44,11 @@ with [data.sql](./src/main/resources/data.sql)
 | /products/expired     | lists expired products.                                                                                                                             | GET          |
 | /products/notexpired  | lists not expired products                                                                                                                          | GET          |
 | /users/id/comments    | lists all comments that commented by a specific user. If start_date and end_date Request Parameters get value returns comments between those dates. | GET          |
+
+---
+
+## Tests
+Repository and Services tested to verify functionality of the project.
+H2 in-memory database used for testing.
+Test results can be seen in the image below.
+![Test Result](Case-1/src/test/resources/test-result.PNG)
