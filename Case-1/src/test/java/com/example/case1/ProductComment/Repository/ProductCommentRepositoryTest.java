@@ -5,7 +5,6 @@ import com.example.case1.Product.Repository.ProductRepository;
 import com.example.case1.ProductComment.Entity.ProductComment;
 import com.example.case1.User.Entity.User;
 import com.example.case1.User.Repository.UserRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +14,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -72,7 +69,7 @@ class ProductCommentRepositoryTest {
     @Test
     void findByUser() {
         List<ProductComment> foundComments = productCommentRepository.findByUser(user);
-        assertThat(foundComments.size()>0);
+        assertThat(foundComments.size() > 0);
     }
 
     @Test
@@ -83,7 +80,7 @@ class ProductCommentRepositoryTest {
                 LocalDate.now().minusMonths(3L),
                 LocalDate.now().plusMonths(3L)
         );
-        assertThat(foundComments.size()>0);
+        assertThat(foundComments.size() > 0);
     }
 
     @Test
@@ -94,7 +91,7 @@ class ProductCommentRepositoryTest {
                 LocalDate.now().minusMonths(3L),
                 LocalDate.now().plusMonths(3L)
         );
-        assertThat(foundComments.size()>0);
+        assertThat(foundComments.size() > 0);
 
     }
 }
