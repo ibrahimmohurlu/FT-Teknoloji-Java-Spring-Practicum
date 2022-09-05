@@ -51,4 +51,4 @@ with [data.sql](./src/main/resources/data.sql)
 Repository and Services tested to verify functionality of the project.
 H2 in-memory database used for testing.
 Test results can be seen in the image below.
-![Test Result](Case-1/src/test/resources/test-result.PNG)
+![Test Result](src/test/resources/test-result.PNG)
