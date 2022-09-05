@@ -19,6 +19,15 @@ class ProductRepositoryTest {
 
     @Test
     void findAllExpired() {
+        Product product = new Product();
+        product.setName("Expired Product!");
+        product.setPrice(0.0);
+        //Creating an expired product.
+        product.setExpDate(LocalDate.of(1883, 1, 1));
+        //saving expired product to the database.
+        productRepository.save(product);
+
+        //list should not be empty.
         List<Product> products = productRepository.findAllExpired(LocalDate.now());
         Assertions.assertNotEquals(products.size(), 0);
         for (Product p : products) {
@@ -29,13 +38,13 @@ class ProductRepositoryTest {
 
     @Test
     void findAllNotExpired() {
-        Product expiredProduct = new Product();
-        expiredProduct.setName("Not expired Product!");
-        expiredProduct.setPrice(0.0);
+        Product product = new Product();
+        product.setName("Not expired Product!");
+        product.setPrice(0.0);
         //Creating a product that will never get expired soon.
-        expiredProduct.setExpDate(LocalDate.of(9999, 1, 1));
+        product.setExpDate(LocalDate.of(9999, 1, 1));
         // saving product to database
-        productRepository.save(expiredProduct);
+        productRepository.save(product);
         List<Product> notExpiredProducts = productRepository.findAllNotExpired(LocalDate.now());
         Assertions.assertEquals(notExpiredProducts.size(), 1);
         for (Product p : notExpiredProducts) {
