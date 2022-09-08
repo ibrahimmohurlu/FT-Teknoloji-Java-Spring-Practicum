@@ -47,55 +47,37 @@ with [data.sql](./src/main/resources/data.sql)
 
 ### Responses
 <details>
-<summary> /products/3/comments (Comments based on product ID)</summary>
+<summary> /products/5/comments (Comments based on product ID)</summary>
 
 ``` yaml
  [
     {
-        "id": 14,
-        "comment": "reinvent cross-media vortals",
-        "commentDate": "2021-09-02",
+        "id": 4,
+        "comment": "mesh distributed web-readiness",
+        "commentDate": "2022-01-17",
         "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41000366210938,
-            "expDate": "2021-09-08"
-        },
-        "user": {
             "id": 5,
-            "firstName": "Byran",
-            "lastName": "Hillin",
-            "email": "bhillin4@cornell.edu",
-            "phoneNumber": "367-458-2806"
-        }
-    },
-    {
-        "id": 16,
-        "comment": "enable 24/365 relationships",
-        "commentDate": "2022-04-11",
-        "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41000366210938,
-            "expDate": "2021-09-08"
+            "name": "Instant Coffee",
+            "price": 52.06,
+            "expDate": "2022-06-30"
         },
         "user": {
-            "id": 6,
-            "firstName": "Cesar",
-            "lastName": "Linguard",
-            "email": "clinguard5@webeden.co.uk",
-            "phoneNumber": "910-176-2029"
+            "id": 4,
+            "firstName": "Kristal",
+            "lastName": "Kohrs",
+            "email": "kkohrs3@tmall.com",
+            "phoneNumber": "375-431-1496"
         }
     },
     {
-        "id": 17,
-        "comment": "engage real-time networks",
-        "commentDate": "2022-03-25",
+        "id": 6,
+        "comment": "optimize transparent web-readiness",
+        "commentDate": "2021-10-18",
         "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41000366210938,
-            "expDate": "2021-09-08"
+            "id": 5,
+            "name": "Instant Coffee",
+            "price": 52.06,
+            "expDate": "2022-06-30"
         },
         "user": {
             "id": 1,
@@ -103,6 +85,42 @@ with [data.sql](./src/main/resources/data.sql)
             "lastName": "Feaveer",
             "email": "tfeaveer0@nifty.com",
             "phoneNumber": "770-404-4917"
+        }
+    },
+    {
+        "id": 13,
+        "comment": "engage viral partnerships",
+        "commentDate": "2022-03-26",
+        "product": {
+            "id": 5,
+            "name": "Instant Coffee",
+            "price": 52.06,
+            "expDate": "2022-06-30"
+        },
+        "user": {
+            "id": 3,
+            "firstName": "Jaye",
+            "lastName": "Anstiss",
+            "email": "janstiss2@jimdo.com",
+            "phoneNumber": "716-389-7511"
+        }
+    },
+    {
+        "id": 19,
+        "comment": "redefine proactive synergies",
+        "commentDate": "2021-09-28",
+        "product": {
+            "id": 5,
+            "name": "Instant Coffee",
+            "price": 52.06,
+            "expDate": "2022-06-30"
+        },
+        "user": {
+            "id": 4,
+            "firstName": "Kristal",
+            "lastName": "Kohrs",
+            "email": "kkohrs3@tmall.com",
+            "phoneNumber": "375-431-1496"
         }
     }
 ]
@@ -110,55 +128,19 @@ with [data.sql](./src/main/resources/data.sql)
 </details>
 
 <details>
-<summary> /products/3/comments?start-date=2020-1-1&end-date=2020-12-31 (Comments based on product ID between 2020-1-1 and 2020-12-31)</summary>
+<summary> /products/5/comments?start_date=2021-01-01&end_date=2021-12-31 (Comments based on product ID between 2021-01-01 and 2021-12-31)</summary>
 
 ``` yaml
  [
     {
-        "id": 14,
-        "comment": "reinvent cross-media vortals",
-        "commentDate": "2021-09-02",
+        "id": 6,
+        "comment": "optimize transparent web-readiness",
+        "commentDate": "2021-10-18",
         "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41,
-            "expDate": "2021-09-08"
-        },
-        "user": {
             "id": 5,
-            "firstName": "Byran",
-            "lastName": "Hillin",
-            "email": "bhillin4@cornell.edu",
-            "phoneNumber": "367-458-2806"
-        }
-    },
-    {
-        "id": 16,
-        "comment": "enable 24/365 relationships",
-        "commentDate": "2022-04-11",
-        "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41,
-            "expDate": "2021-09-08"
-        },
-        "user": {
-            "id": 6,
-            "firstName": "Cesar",
-            "lastName": "Linguard",
-            "email": "clinguard5@webeden.co.uk",
-            "phoneNumber": "910-176-2029"
-        }
-    },
-    {
-        "id": 17,
-        "comment": "engage real-time networks",
-        "commentDate": "2022-03-25",
-        "product": {
-            "id": 3,
-            "name": "Tray - Foam, Square 4 - S",
-            "price": 71.41,
-            "expDate": "2021-09-08"
+            "name": "Instant Coffee",
+            "price": 52.060001373291016,
+            "expDate": "2022-06-30"
         },
         "user": {
             "id": 1,
@@ -166,6 +148,24 @@ with [data.sql](./src/main/resources/data.sql)
             "lastName": "Feaveer",
             "email": "tfeaveer0@nifty.com",
             "phoneNumber": "770-404-4917"
+        }
+    },
+    {
+        "id": 19,
+        "comment": "redefine proactive synergies",
+        "commentDate": "2021-09-28",
+        "product": {
+            "id": 5,
+            "name": "Instant Coffee",
+            "price": 52.060001373291016,
+            "expDate": "2022-06-30"
+        },
+        "user": {
+            "id": 4,
+            "firstName": "Kristal",
+            "lastName": "Kohrs",
+            "email": "kkohrs3@tmall.com",
+            "phoneNumber": "375-431-1496"
         }
     }
 ]
@@ -338,7 +338,7 @@ with [data.sql](./src/main/resources/data.sql)
 </details>
 
 <details>
-<summary> /users/3/comments?start-date=2020-1-1&end-date=2020-12-31 (Comments based on user ID between 2020-1-1 and 2020-12-31)</summary>
+<summary> /users/3/comments?start_date=2021-01-01&end_date=2021-12-31 (Comments based on user ID between 2021-01-01 and 2021-12-31)</summary>
 
 ``` yaml
  [
@@ -351,60 +351,6 @@ with [data.sql](./src/main/resources/data.sql)
             "name": "Coffee - Decafenated",
             "price": 87.25,
             "expDate": "2021-09-21"
-        },
-        "user": {
-            "id": 3,
-            "firstName": "Jaye",
-            "lastName": "Anstiss",
-            "email": "janstiss2@jimdo.com",
-            "phoneNumber": "716-389-7511"
-        }
-    },
-    {
-        "id": 11,
-        "comment": "strategize out-of-the-box methodologies",
-        "commentDate": "2022-07-18",
-        "product": {
-            "id": 8,
-            "name": "Pasta - Gnocchi, Potato",
-            "price": 84.11000061035156,
-            "expDate": "2022-01-29"
-        },
-        "user": {
-            "id": 3,
-            "firstName": "Jaye",
-            "lastName": "Anstiss",
-            "email": "janstiss2@jimdo.com",
-            "phoneNumber": "716-389-7511"
-        }
-    },
-    {
-        "id": 13,
-        "comment": "engage viral partnerships",
-        "commentDate": "2022-03-26",
-        "product": {
-            "id": 5,
-            "name": "Instant Coffee",
-            "price": 52.060001373291016,
-            "expDate": "2022-06-30"
-        },
-        "user": {
-            "id": 3,
-            "firstName": "Jaye",
-            "lastName": "Anstiss",
-            "email": "janstiss2@jimdo.com",
-            "phoneNumber": "716-389-7511"
-        }
-    },
-    {
-        "id": 20,
-        "comment": "revolutionize user-centric channels",
-        "commentDate": "2022-04-23",
-        "product": {
-            "id": 10,
-            "name": "Lobster - Baby, Boiled",
-            "price": 91.08000183105469,
-            "expDate": "2022-08-14"
         },
         "user": {
             "id": 3,
