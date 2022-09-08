@@ -2,10 +2,10 @@
 
 # Table Of Content
 
-* ### [Description](#description)
-* ### [API Endpoints](#api-endpoints)
-* ### [Responses](#responses)
-* ### [Tests](#tests)
+* ### [Description](#description-1)
+* ### [API Endpoints](#api-endpoints-1)
+* ### [Responses](#responses-1)
+* ### [Tests](#tests-1)
 
 ---
 
